@@ -1,10 +1,28 @@
+{{#unless user}}
 <div class="d-flex flex-column flex-md-row align-items-center p-3 bg-white">
   <h5 class="my-0 mr-md-auto font-weight-normal"> <a href="./"><img src="img/DAWUP.png" width="70%" alt="" srcset=""></a></h5>
-  <nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 m-2 text-dark" style="text-decoration: none;" id="Home" href="./">INICIO</a>
-    <a class="p-2 m-2 text-dark" style="text-decoration: none;" id="We" href="/Nosotros">NOSOTROS</a>
-    <a class="p-2 m-2 text-dark" style="text-decoration: none;" id="Contact" href="/Contacto">CONTACTO</a>
-    <a class="p-2 m-2 text-dark" style="text-decoration: none;" id="Signup" href="/signup">ACCESO</a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white flex-column">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>    
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="p-1 m-2 text-dark" style="text-decoration: none;" id="Home" href="./">INICIO</a>
+      </li>
+      <li class="nav-item active">
+            <a class="p-1 m-2 text-dark" style="text-decoration: none;" id="We" href="/Nosotros">NOSOTROS</a>
+      </li>
+      <li class="nav-item active">
+         <a class="p-1 m-2 text-dark" style="text-decoration: none;" id="Contact" href="/Contacto">CONTACTO</a>
+      </li>
+      <li class="nav-item active">
+        <a class="p-1 m-2 text-dark" style="text-decoration: none;" id="Signup" href="/signup">ACCESO</a>
+      </li>
+    </ul>
+  </div>
   </nav>
 </div>
+
 <div style="border-top: solid #0000AA;" class="row">
+{{/unless}}

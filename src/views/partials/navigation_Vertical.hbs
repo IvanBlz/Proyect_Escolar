@@ -1,0 +1,64 @@
+{{#if user}}
+<div class="d-flex flex-column flex-md-row align-items-center p-3 bg-white">
+  <h5 class="my-0 mr-md-auto font-weight-normal"> <a href="/profile"><img src="img/DAWUP.png" width="70%" alt="" srcset=""></a></h5>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white flex-column" id="user_NAV">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>    
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <div class="dropdown">
+  <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   <img src="img/profile.png" width="40px" alt="" srcset=""> {{user.User_Name}}
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="profile">Perfil</a>
+    <a class="dropdown-item" href="#">Configuraci&oacute;n</a>
+    <a class="dropdown-item" href="/logout">Cerrar sesi&oacute;n</a>
+  </div>
+</div>
+      </li>
+    </ul>
+  </div>
+  </nav>
+</div>
+
+<div style="border-top: solid #0000AA;" class="row">
+  <div class="col-lg-2">
+<div class="nav-side-menu">
+  
+        <div class="menu-list">
+  
+            <ul id="menu-content" class="menu-content collapse out">
+                <li>
+                  <a href="profile">
+                  <i class="fas fa-tachometer-alt fa-lg"></i> Dashboard
+                  </a>
+                </li>
+
+                <li>
+                  <a href="projects"><i class="fab fa-studiovinari fa-lg"></i> Projects</a>
+                </li>
+
+
+                <li>
+                  <a href="task"><i class="fab fa-fort-awesome-alt fa-lg"></i> Task </a>
+                </li>
+
+
+                <li>
+                  <a href="customer"><i class="fab fa-pagelines fa-lg"></i> Customer</a>
+                </li>
+
+
+                 <li>
+                  <a href="security">
+                  <i class="fas fa-user-tie fa-lg"></i> Security
+                  </a>
+                  </li>
+                </ul>
+     </div>
+</div>
+</div>
+{{/if}}

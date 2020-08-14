@@ -1,50 +1,56 @@
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
-const session = require('express-session');
 const exphbs = require('express-handlebars');
-const bodyParser = require('body-parser');
+const session = require('express-session');
+const validator = require('express-validator');
 const passport = require('passport');
+const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
 const MySQLStore = require('express-mysql-session')(session);
+const bodyParser = require('body-parser');
 const { database } = require('./conexion');
-//initializations
+
+// Intializations
 const app = express();
-require("./lib/passport");
-//settings
-//Parsear el body usando body parser
-app.use(bodyParser.json()); // body en formato json
-app.use(bodyParser.urlencoded({ extended: false })); //body formulario
-app.set('port', process.env.PORT || 4000);
-app.set('views',path.join(__dirname,'views'));
-app.engine('.hbs', exphbs({
-    defaultLayout: 'main',
-    layoutsDir:  path.join(app.get('views'),'layout'),
-    partialsDir: path.join(app.get('views'),'partials'),
-    extname: '.hbs',
-    helpers: require('./lib/handlebars')
-}));
-app.set('view engine', '.hbs');
+require('./lib/passport');
 
+app.use(cookieParser('DawupSecret'));
 
-//middleware
 app.use(session({
-    secret: 'DAWUP',
-    resave: false,
-    saveUninitialized: false,
-    store: new MySQLStore(database)
+  secret: 'DAWUP',
+  resave: true,
+  saveUninitialized: true
 }));
 app.use(flash());
-app.use(morgan('dev'));
 app.use(passport.initialize());
 app.use(passport.session());
 
-//global variables
+// Settings
+app.set('port', process.env.PORT || 4000);
+app.set('views', path.join(__dirname, 'views'));
+app.engine('.hbs', exphbs({
+  defaultLayout: 'main',
+  layoutsDir: path.join(app.get('views'), 'layout'),
+  partialsDir: path.join(app.get('views'), 'partials'),
+  extname: '.hbs',
+  helpers: require('./lib/handlebars')
+}))
+app.set('view engine', '.hbs');
+
+// Middlewares
+app.use(morgan('dev'));
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
+//app.use(validator());
+
+// Global variables
 app.use((req, res, next) => {
-    //app.locals.message = req.flash('message');
-    app.locals.success = req.flash('success');
-    //app.locals.user = req.user;
-    next();
+  app.locals.message = req.flash('message');
+  app.locals.success = req.flash('success');
+  app.locals.user = req.user;
+  next();
 });
 
 
@@ -53,15 +59,10 @@ app.use(require("./routes/index"));
 app.use(require("./routes/autentication"));
 app.use('/Nosotros',require('./routes/Nosotros'));
 app.use('/Contacto',require('./routes/Contacto'));
-
-
-//Public
+// Public
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-//starting
-
-
+// Starting
 app.listen(app.get('port'), () => {
-    console.log('server is in port', app.get('port'));
+  console.log('Server is in port', app.get('port'));
 });

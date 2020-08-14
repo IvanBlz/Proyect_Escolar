@@ -1,0 +1,98 @@
+<div class="col-lg-10">
+    <div id="project">
+        <div class="row">
+            <div class="mx-auto">
+                <h1><em>PROJECTS</em></h1>
+            </div>
+            <br><br>
+        </div>
+        <div class="col-lg-12">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-white float-right" data-toggle="modal" data-target="#exampleModal">
+                <span id="add" class="text-success">+</span>
+            </button>
+ <br><br>       </div>
+        <div class="col-lg-12">
+           <div class="row">
+            {{#each projects}}
+            <div class="col-lg-4">
+            <div class="card border-danger mb-3">
+                <div class="card-body text-danger">
+                    <h5 class="card-title">{{Name}}</h5>
+                    <h6 class="card-text mb-2 text-muted">{{Estimate}}</h6>
+                    <h6 class="card-text mb-2 text-muted">{{Date_Start}}</h6>
+                    <h6 class="card-text mb-2 text-muted">{{Date_End}}</h6>
+                    <h6 class="card-text mb-2 text-muted">{{Total_Cost}}</h6>                    
+                </div>
+            </div>
+            </div>
+
+            {{/each}}
+            </div>
+        </div>
+
+                    <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content text-center">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-warning" id="exampleModalLabel">NEW PROJECT</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <form action="projects" method="post">
+                                <div class="row">
+                                    <div class="col-lg-7">
+                                        <div class="form-group">
+                                            <label for="Customer">Customer</label>
+                                            <select name="Customer" class="form-control" id="Customer" required>
+                                                <option value="">...</option>
+                                            {{#each Customer}}
+                                            
+                                                <option value="{{Id_Customer}}">{{Name}}</option>
+                                            
+                                            {{/each}}
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Responsible">Responsible</label>
+                                            <select name="Responsible" class="form-control" id="Responsible" required>
+                                                <option value="">...</option>
+                                            {{#each Users}}
+                                            
+                                                <option value="{{Id_Security}}">{{User_Name}}</option>
+                                            
+                                            {{/each}}
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Estimate">Estimate</label>
+                                            <input type="number" name="Estimate" placeholder="Estimate $" id="number" class="form-control" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-5">
+                                        <div class="form-group">
+                                            <label for="Project">Project</label>
+                                            <input type="text" name="Project" placeholder="Project" id="Project" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="date" name="date" id="date" class="form-control" required>
+                                        </div>
+                                            
+                                    </div>
+                                    <div class="col-lg-12 align-items-center">
+                                    <input type="submit" class="btn btn-success" value="SAVE">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

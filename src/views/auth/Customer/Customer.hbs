@@ -1,0 +1,108 @@
+<div class="col-lg-10">
+    <div id="project">
+        <div class="row">
+            <div class="mx-auto">
+                <h1><em>CUSTOMER</em></h1>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-white float-right" data-toggle="modal" data-target="#exampleModal">
+                <span id="add" class="text-success">+</span>
+            </button>
+ <br><br>       </div>
+        <div class="col-lg-12">
+           <div class="row">
+            {{#each Customer}}
+            <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{Name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{Email}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{Phone}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{RFC}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{Street}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{Colony}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{State}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{Zip_Code}}</h6>
+                    
+                </div>
+            </div>
+            </div>
+
+            {{/each}}
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content text-center">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-warning" id="exampleModalLabel">NEW CUSTOMER</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form action="customer" method="post">
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <div class="form-group">
+                                        <label for="Customer">Name</label>
+                                        <input type="text" name="Customer" placeholder="Customer" id="Customer"
+                                            class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" name="email" placeholder="email" id="email"
+                                            class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="RFC">R.F.C</label>
+                                        <input type="text" maxlength="13" minlength="12" name="RFC"
+                                            placeholder="XAXX010101000" id="RFC" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Phone">Phone</label>
+                                        <input type="tel" maxlength="15" minlength="10" name="Phone"
+                                            placeholder="550000000000" id="Phone" class="form-control" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label for="Street">Street</label>
+                                        <input type="text" name="Street" id="Street" placeholder="Street"
+                                            class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Colony">Colony</label>
+                                        <input type="text" name="Colony" id="Colony" placeholder="Colony"
+                                            class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="State">State</label>
+                                        <input type="text" name="State" id="State" placeholder="State"
+                                            class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ZipCode">Zip Code</label>
+                                        <input type="text" name="Zip_Code" id="ZipCode" maxlength="5" minlength="5"
+                                            placeholder="00000" class="form-control" required>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-12 align-items-center">
+                                    <input type="submit" class="btn btn-success" value="SAVE">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

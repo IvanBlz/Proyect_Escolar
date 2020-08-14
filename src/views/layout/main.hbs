@@ -1,19 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>DESAROOLO DE APLICACIONES WEB</title>
+	<meta name="theme-color" content="#0080FF">
+	<meta name="Title" content="DISEÑO DE PAGINAS WEB ECONÓMICAS EN CDMX">
+	<meta name="Author" content="DAWUP.com">
+	<meta name="Subject" content="Diseño de paginas Web">
+	<meta name="Description" content="Diseño Web Profesional, precios económicos, EXPERTOS EN POSICIONAMIENTO, incluye hosting, dominio y posicionamiento en Google">
+	<meta name="Keywords" content="DAWUP, DAWUP.com, DAWUP.co, DESARROLLO DAWUP,DESARROLLO DE APLICACIONES WEB DAWUP, DESARROLLO DE PAGINAS WEB DAWUP, DISEÑO WEB, DISEÑO DE PAGINAS WEB, ELABORACION DE PAGINAS WEB, DESARROLLO WEB, CREACION DE PAGINAS WEB, PAGINAS WEB ECONOMICAS, PAGINAS EN INTERNET, REGISTRO DE DOMINIOS, CORREO ELECTRONICO, SEO, POSICIONAMIENTO WEB, PAGINA DE INTERNET, PAGINAS PARA EMPRESAS, PROMOCION EN PAGINAS WEB, PAGINAS WEB PROFESIONALES, CUANTO CUESTA UNA PAGINA WEB, PAGINAS WEB PRECIOS, DISEÑO DE PAGINAS WEB EN CDMX, DISEÑO DE PAGINAS WEB EN EL DF, DISEÑO DE APLICACIONES WEB, ELABORACION DE APLICACIONES WEB, DESARROLLO WEB, CREACION DE APLICACIONES WEB, APLICACIONES WEB ECONOMICAS, APLICACIONES EN INTERNET, APLICACION DE INTERNET, APLICACIONES PARA EMPRESAS, PROMOCION EN APLICACIONES WEB, APLICACIONES WEB PROFESIONALES, CUANTO CUESTA UNA APLICACION WEB, APLICACION WEB PRECIOS, DISEÑO DE APLICACIONES WEB EN CDMX, DISEÑO DE APLICACIONES WEB EN EL DF">
+
+	<title>DISEÑO DE PAGINAS WEB ECONÓMICAS EN CDMX</title>
+
+		<!-- Add custom CSS here -->
+		
   {{!-- BOOTSTRAP --}}
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
   <link rel="stylesheet" href="css/css.css">
-</head>
-<body style="width: 98vw;">
 
-
- {{> navigation}}
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
  
+
+		
+	</head>
+<body>
+{{#unless user}}
+ {{> navigation}}
+ {{else}}
+ {{> navigation_Vertical}}
+{{/unless}}
  {{> message}} 
 
   {{{body}}}

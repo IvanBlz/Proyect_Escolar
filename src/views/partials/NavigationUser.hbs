@@ -1,0 +1,49 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 bg-white">
+{{#unless user}}
+<div style="border-top: solid #0000AA;" class="row"></div>  <h5 class="my-0 mr-md-auto font-weight-normal"> 
+  <a href="./"><img src="img/DAWUP.png" width="70%" alt="" srcset=""></a>
+  </h5>
+    {{else}}
+    <div style="border-top: solid #0000AA;" class="row"></div>  <h5 class="my-0 mr-md-auto font-weight-normal"> 
+  <a href="profile"><img src="img/DAWUP.png" width="70%" alt="" srcset=""></a>
+  </h5>
+  {{/unless}}
+  <nav class="navbar navbar-expand-lg navbar-light bg-white flex-column">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>    
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      {{#unless user}}
+      <li class="nav-item active">
+        <a class="p-1 m-2 text-dark" style="text-decoration: none;" id="Home" href="./">INICIO</a>
+      </li>
+      <li class="nav-item active">
+            <a class="p-1 m-2 text-dark" style="text-decoration: none;" id="We" href="/Nosotros">NOSOTROS</a>
+      </li>
+      <li class="nav-item active">
+         <a class="p-1 m-2 text-dark" style="text-decoration: none;" id="Contact" href="/Contacto">CONTACTO</a>
+      </li>
+      <li class="nav-item active">
+        <a class="p-1 m-2 text-dark" style="text-decoration: none;" id="Signup" href="/signup">ACCESO</a>
+      </li>
+      {{/unless}}
+      {{#if user}}
+      <li class="nav-item active">
+        <div class="dropdown">
+  <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   <img src="img/profile.png" width="40px" alt="" srcset=""> {{user.User_Name}}
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="profile">Perfil</a>
+    <a class="dropdown-item" href="#">Configuraci&oacute;n</a>
+    <a class="dropdown-item" href="/logout">Cerrar sesi&oacute;n</a>
+  </div>
+</div>
+      </li>
+      {{/if}}
+    </ul>
+  </div>
+  </nav>
+</div>
+<div style="border-top: solid #0000AA;" class="row">

@@ -1,0 +1,30 @@
+<div class="col-lg-10">
+    <div id="project">
+        <div class="row">
+            <div class="mx-auto">
+                <h1><em>TASK</em></h1>
+            </div>
+            <br><br>
+        </div>
+        <div class="col-lg-12">
+           <div class="row">
+            {{#each projects}}
+            <div class="col-lg-4">
+                <a href="#" style="text-decoration: none;">
+            <div class="card border-danger mb-3">
+                <div class="card-body text-danger">
+                    <h5 class="card-title">{{Name}}</h5>
+                    <h6 class="card-text mb-2 text-muted">{{Estimate}}</h6>
+                    <h6 class="card-text mb-2 text-muted">{{Date_Start}}</h6>
+                    <h6 class="card-text mb-2 text-muted">{{Date_End}}</h6>
+                    <h6 class="card-text mb-2 text-muted">{{Total_Cost}}</h6>                    
+                </div>
+            </div>
+            </a>
+            </div>
+
+            {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
